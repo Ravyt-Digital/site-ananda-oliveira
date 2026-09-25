@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://ananda-oliveira-imagem.ravytdigital.chatgpt.site/sitemap.xml
