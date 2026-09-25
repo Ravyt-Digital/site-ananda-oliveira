@@ -1,17 +1,16 @@
 # Site Ananda Oliveira
 
-Site estático da Ananda Oliveira. Os arquivos prontos para publicação estão em `dist/`.
+Site estático da Ananda Oliveira. A versão publicada está em `dist/`.
 
-## Cloudflare Pages
+## Cloudflare Workers Builds
 
-Conecte este repositório à Cloudflare Pages com as seguintes configurações:
+Este repositório está conectado ao Worker `site-ananda-oliveira`. O arquivo `wrangler.toml` aponta os recursos estáticos para `./dist`, e um push na branch `main` dispara o build automático.
 
-- Branch de produção: `main`
-- Framework preset: `None`
-- Comando de build: deixe vazio
-- Diretório de saída: `dist`
-- Diretório raiz: `/` (padrão)
+Configuração esperada no Cloudflare:
 
-Cada novo commit na branch `main` iniciará um deploy automático **depois que a integração GitHub ↔ Cloudflare Pages estiver conectada**.
+- Branch de produção: `main`.
+- Diretório raiz: `/`.
+- Comando de build: vazio; o site já está pronto em `dist/`.
+- Comando de deploy: `npx wrangler deploy`.
 
-Não é preciso instalar dependências. `dist/index.html` é a página inicial e referencia `dist/site.css`, `dist/site.js`, `dist/ambient-background.js` e os arquivos em `dist/assets/`.
+`dist/index.html` referencia `site.css`, `site.js`, `ambient-background.js` e os recursos em `dist/assets/`. Não há dependências de build para o site estático.

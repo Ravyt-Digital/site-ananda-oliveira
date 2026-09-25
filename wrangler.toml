@@ -1,0 +1,5 @@
+name = "site-ananda-oliveira"
+compatibility_date = "2026-09-25"
+
+[assets]
+directory = "./dist"
